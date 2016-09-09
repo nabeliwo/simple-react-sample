@@ -12,3 +12,5 @@ $ npm run build
 $ open index.html
 $ npm run watch
 ```
+
+Copy `./sample/` directory's file to `./src/app.jsx`.
