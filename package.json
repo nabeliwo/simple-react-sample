@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "lint": "eslint src",
-    "watch": "watchify -d src/app.jsx -t babelify -o dist/bundle.js",
-    "build": "browserify src/app.jsx -t babelify -t uglifyify -o dist/bundle.js"
+    "watch": "watchify -d --extension=jsx src/app.jsx -t babelify -o dist/bundle.js",
+    "build": "browserify --extension=jsx src/app.jsx -t babelify -t uglifyify -o dist/bundle.js"
   },
   "repository": {
     "type": "git",
