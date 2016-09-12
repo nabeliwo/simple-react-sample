@@ -1,11 +1,12 @@
 import React, { PropTypes } from 'react';
 
-const Child = ({ list }) =>
+const Child = ({ list }) => (
   <ul>
     {list.map(item =>
       <li key={item.id}>{item.content}</li>
     )}
-  </ul>;
+  </ul>
+);
 
 Child.propTypes = {
   list: PropTypes.array.isRequired

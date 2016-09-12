@@ -9,7 +9,7 @@ $ git clone https://github.com/nabeliwo/simple-react-sample.git
 $ cd simple-react-sample
 $ npm i
 $ npm run build
-$ open index.html
+$ open index.html // for OS X
 $ npm run watch
 ```
 

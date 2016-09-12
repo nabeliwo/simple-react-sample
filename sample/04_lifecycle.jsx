@@ -1,15 +1,18 @@
 import React, { Component } from 'react';
 import { render } from 'react-dom';
-import PropLifecycle from '../sample/PropLifecycle';
+import Count from '../sample/Count2';
+import Manipulator from '../sample/Manipulator';
 
-class App extends Component {
+class Counter extends Component {
   constructor(...args) {
     super(...args);
 
     this.state = {
-      count: 0,
-      childFlag: true
+      count: 0
     };
+
+    this.increment = this.increment.bind(this);
+
     console.log('constructor');
   }
 
@@ -21,32 +24,20 @@ class App extends Component {
     console.log('componentDidMount');
   }
 
-  shouldComponentUpdate() {
-    console.log('shouldComponentUpdate');
-    return true;
-  }
-
-  componentWillUpdate() {
-    console.log('componentWillUpdate');
-  }
-
-  componentDidUpdate() {
-    console.log('componentDidUpdate');
+  increment() {
+    this.setState({
+      count: this.state.count + 1
+    });
   }
 
   render() {
     return (
       <div>
-        {this.state.childFlag &&
-          <PropLifecycle
-            count={this.state.count}
-            increment={() => { this.setState({ count: this.state.count + 1 }); }}
-          />
-        }
-        <button onClick={() => { this.setState({ childFlag: false }); }}>子要素を削除</button>
+        <Count num={this.state.count} />
+        <Manipulator text="countUp" method={this.increment} />
       </div>
     );
   }
 }
 
-render(<App />, document.getElementById('app'));
+render(<Counter />, document.getElementById('app'));

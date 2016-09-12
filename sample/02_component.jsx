@@ -6,14 +6,14 @@ class Parent extends Component {
   constructor(...args) {
     super(...args);
 
-    this.list = [
+    this.state.list = [
       { id: 1, content: 'hoge' },
       { id: 2, content: 'fuga' }
     ];
   }
 
   render() {
-    return <Child list={this.list} />;
+    return <Child list={this.state.list} />;
   }
 }
 

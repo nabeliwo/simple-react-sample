@@ -1,7 +1,6 @@
 import React, { PropTypes } from 'react';
 
-const Count = ({ num }) =>
-  <p>Count: {num}</p>;
+const Count = ({ num }) => <p>Count: {num}</p>;
 
 Count.propTypes = {
   num: PropTypes.number.isRequired
